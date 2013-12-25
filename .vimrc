@@ -36,6 +36,8 @@ syntax on
 set showbreak=↪
 set wildmenu
 set wildmode=list:longest,full
+set ignorecase
+set smartcase
 
 """Vim hotkeys
 
