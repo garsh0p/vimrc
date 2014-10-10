@@ -38,6 +38,7 @@ set wildmenu
 set wildmode=list:longest,full
 set ignorecase
 set smartcase
+set wrap
 
 """Vim hotkeys
 
@@ -53,7 +54,7 @@ let g:CommandTAcceptSelectionMap='<C-v>'
 let g:CommandTMaxFiles=10000
 
 "File types to ignore
-set wildignore+=*.png,*.jpg,*.gif,*.tar.gz,*.tgz,*.zip,*.wav,*.mp3,*.class
+set wildignore+=*.png,*.jpg,*.gif,*.tar.gz,*.tgz,*.zip,*.wav,*.mp3,*.class,*/target/*
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TlistToggle<CR>
