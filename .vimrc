@@ -9,6 +9,7 @@ Bundle 'ctrlp.vim'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'https://github.com/dantler/vim-alternate.git'
 Bundle 'taglist.vim'
+Bundle 'surround.vim'
 
 filetype plugin indent on
 
