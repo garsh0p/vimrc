@@ -3,16 +3,17 @@ set nocompatible
 "Vundle stuff
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'ctrlp.vim'
-Bundle 'https://github.com/scrooloose/nerdtree.git'
-Bundle 'https://github.com/dantler/vim-alternate.git'
-Bundle 'taglist.vim'
-Bundle 'surround.vim'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'ctrlp.vim'
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'https://github.com/dantler/vim-alternate.git'
+Plugin 'taglist.vim'
+Plugin 'surround.vim'
 
+call vundle#end()
 filetype plugin on
 filetype plugin indent on
 
