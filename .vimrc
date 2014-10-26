@@ -1,3 +1,5 @@
+set nocompatible
+
 "Vundle stuff
 filetype off
 
@@ -11,14 +13,13 @@ Bundle 'https://github.com/dantler/vim-alternate.git'
 Bundle 'taglist.vim'
 Bundle 'surround.vim'
 
+filetype plugin on
 filetype plugin indent on
 
 "Vim options
 set bg=dark
 set mouse=a
-set nocompatible
 set autoindent
-set smartindent
 set tabstop=4
 set shiftwidth=4
 set showmatch
@@ -49,13 +50,8 @@ nnoremap Q <nop>
 "Use \/ to clear search highlighting
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
-"Command T
-let g:CommandTAcceptSelectionVSplitMap='<CR>'
-let g:CommandTAcceptSelectionMap='<C-v>'
-let g:CommandTMaxFiles=10000
-
 "File types to ignore
-set wildignore+=*.png,*.jpg,*.gif,*.tar.gz,*.tgz,*.zip,*.wav,*.mp3,*.class,*/target/*
+set wildignore+=*.png,*.jpg,*.gif,*.tar.gz,*.tgz,*.zip,*.wav,*.mp3,*.class,*/target/*,*.pyc
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TlistToggle<CR>
