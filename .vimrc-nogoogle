@@ -1,0 +1,101 @@
+set nocompatible
+
+"Vundle stuff
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+"Plugin 'ctrlp.vim'
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'https://github.com/dantler/vim-alternate.git'
+Plugin 'taglist.vim'
+Plugin 'surround.vim'
+Plugin 'kshenoy/vim-signature'
+"Plugin 'FelikZ/ctrlp-py-matcher'
+Plugin 'https://github.com/wincent/command-t.git'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
+
+call vundle#end()
+filetype plugin on
+filetype plugin indent on
+
+"Vim options
+set shell=/usr/bin/zsh
+syntax enable
+se t_Co=16
+set background=dark
+colorscheme solarized
+set mouse=a
+set autoindent
+set tabstop=2
+set shiftwidth=2
+set showmatch
+set incsearch
+set expandtab
+set smarttab
+set nu
+"#set textwidth=80
+set backspace=2
+set hlsearch
+set nobackup
+set noswapfile
+set linebreak
+set showbreak=↪
+set wildmenu
+set wildmode=list:longest,full
+set ignorecase
+set smartcase
+set wrap
+set colorcolumn=81
+
+"vim-airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
+
+
+"""Vim hotkeys
+
+"Disable Ex mode hotkey
+nnoremap Q <nop>
+
+"Use \/ to clear search highlighting
+nnoremap <silent> <Leader>/ :nohlsearch<CR>
+
+"Fix mouse on right side
+if has('mouse_sgr')
+  set ttymouse=sgr
+endif
+
+" CTRLP CONFIG
+"
+"File types to ignore
+set wildignore+=*.png,*.jpg,*.gif,*.tar.gz,*.tgz,*.zip,*.wav,*.mp3,*.class,*/target/*,*.pyc,OWNERS,*google3/blaze*
+
+" Unset cap of 10,000 files so we find everything
+let g:ctrlp_max_files = 0
+
+" PyMatcher for CtrlP
+if !has('python')
+    echo 'In order to use pymatcher plugin, you need +python compiled vim'
+else
+    let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+endif
+
+" Command T config
+let g:CommandTMaxFiles=500000
+let g:CommandTFileScanner='watchman'
+let g:CommandTInputDebounce = 50
+let g:CommandTSmartCase = 1
+let g:CommandTAcceptSelectionSplitMap='<C-x>'
+
+map <F2> :NERDTreeToggle<CR>
+map <F3> :TlistToggle<CR>
+map <F4> :A<CR>
+map <F5> :!ctags -R<CR>
+map <F12> :! p4 edit %<CR>
+map <Leader><C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
